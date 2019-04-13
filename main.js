@@ -8,7 +8,7 @@ client.on("ready", () => {
 
 });
 
-let prefix = ">";
+let prefix = ".";
 
 client.on("message", message => {
 
@@ -42,7 +42,7 @@ client.on("message", message => {
         const embed = new RichEmbed()
         .setColor(16776960)
         .setThumbnail(message.guild.iconURL)
-        .setDescription("*>team* **Die Team-Info von das CloudBot-Team!** \n \n *>cloudbot* **Die Info über Cloudbot!**  \n \n *>test* **Test-Command!**  \n \n *>help* **Zeige das hier an!**  \n \n *>support-server* **Der Support Server!** \n \n *>invite* **Hole dir den Bot auf deinen Server!** \n \n *>kick* **Kicke einen User von deinen Server! [Nicht Verfügbar!]** \n \n *>ban* **Banne einen User von deinen Server! [Nicht Verfügbar!]**")
+        .setDescription("*.team* **Die Team-Info von das CloudBot-Team!** \n \n *.cloudbot* **Die Info über Cloudbot!**  \n \n *.test* **Test-Command!**  \n \n *.help* **Zeige das hier an!**  \n \n *.support-server* **Der Support Server!** \n \n *.invite* **Hole dir den Bot auf deinen Server!** \n \n *.kick* **Kicke einen User von deinen Server! [Nicht Verfügbar!]** \n \n *.ban* **Banne einen User von deinen Server! [Nicht Verfügbar!]**")
 
         message.channel.send({embed})
   }
@@ -69,7 +69,7 @@ client.on("message", message => {
   if(!message.guild) return;
   if(message.author.bot) return;
 
-  if(message.content.startsWith(">kick")) {
+  if(message.content.startsWith(".kick")) {
 
      let user = message.mentions.users.first();
      if(!user) return message.channel.send("Du musst erst einen Member angeben!"); 
