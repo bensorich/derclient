@@ -3,7 +3,7 @@ const client = new Client();
 
 client.on("ready", () => { 
 
-            client.user.setPresence({ game: { name: "Coding Mode 2.7", type: 0 } })
+            client.user.setPresence({ game: { name: "Coding Mode 2.8", type: 0 } })
             client.user.setStatus("dnd")
 
 });
@@ -71,20 +71,6 @@ client.on("message", message => {
         member.kick().then((member) => {
             // Successmessage
             message.channel.send(":wave: " + member.displayName + " has been successfully kicked :point_right: ");
-        }).catch(() => {
-             // Failmessage
-            message.channel.send("Access Denied");
-        });
-    }
-});
- client.on("message", (message) => {
-    if (message.content.startsWith(".ban")) {
-        // Easy way to get member object though mentions.
-        var member= message.mentions.members.first();
-        // ban
-        member.ban().then((member) => {
-            // Successmessage
-            message.channel.send(":wave: " + member.displayName + " has been successfully banned https://gfycat.com/playfulfittingcaribou :point_right: ");
         }).catch(() => {
              // Failmessage
             message.channel.send("Access Denied");
