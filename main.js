@@ -3,7 +3,7 @@ const client = new Client();
 
 client.on("ready", () => { 
 
-            client.user.setPresence({ game: { name: "Coding Mode 2.6", type: 0 } })
+            client.user.setPresence({ game: { name: "Coding Mode 2.7", type: 0 } })
             client.user.setStatus("dnd")
 
 });
@@ -64,22 +64,32 @@ client.on("message", message => {
 
         message.channel.send({embed})
   }
-client.on("message", message => { 
-
-  if(!message.guild) return;
-  if(message.author.bot) return;
-
-  if(message.content.startsWith(".kick")) {
-
-     let user = message.mentions.users.first();
-     if(!user) return message.channel.send("Du musst erst einen Member angeben!"); 
-    
-     let member = message.guild.member(user); 
-     if(!member) return message.channel.send("Den Member den du angegeben hast gibt es nicht!"); 
-        
-     member.kick().then(() => message.reply(`Der Member ${member} wurde erfolgreich gekickt!`));
-
-  } 
+    if (message.content.startsWith("$kick")) {
+        // Easy way to get member object though mentions.
+        var member= message.mentions.members.first();
+        // Kick
+        member.kick().then((member) => {
+            // Successmessage
+            message.channel.send(":wave: " + member.displayName + " has been successfully kicked :point_right: ");
+        }).catch(() => {
+             // Failmessage
+            message.channel.send("Access Denied");
+        });
+    }
+});
+ client.on("message", (message) => {
+    if (message.content.startsWith(".ban")) {
+        // Easy way to get member object though mentions.
+        var member= message.mentions.members.first();
+        // ban
+        member.ban().then((member) => {
+            // Successmessage
+            message.channel.send(":wave: " + member.displayName + " has been successfully banned https://gfycat.com/playfulfittingcaribou :point_right: ");
+        }).catch(() => {
+             // Failmessage
+            message.channel.send("Access Denied");
+        });
+    }
 });
 })
 
