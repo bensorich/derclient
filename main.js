@@ -85,7 +85,7 @@ client.on("message", (message) => {
         // Kick
         member.kick().then((member) => {
             // Successmessage
-            message.channel.send(":wave: " + member.displayName + " has been successfully kicked :point_right: ");
+            message.channel.send(":wave: " + member.displayName + " wurde erfolgreich getreten! :point_right: ");
         }).catch(() => {
              // Failmessage
             message.channel.send("Access Denied");
