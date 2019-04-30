@@ -3,7 +3,7 @@ const client = new Client();
 
 client.on("ready", () => { 
 
-            client.user.setPresence({ game: { name: "Coding Mode 4.0", type: 0 } })
+            client.user.setPresence({ game: { name: "Coding Mode 4.1", type: 0 } })
             client.user.setStatus("dnd")
 
 });
@@ -92,20 +92,6 @@ client.on("message", (message) => {
         });
     }
 });
-const Discord = require("discord.js");
-
-module.exports.run = async (bot, message, args) => {
-
-      if(!message.member.hasPermission("ADMINISTRATOR")) return;
-      const sayMessage = args.join(" ");
-      message.delete().catch();
-      message.channel.send(sayMessage);
-
-}
-
-module.exports.help = {
-  name: "say"
-}
 })
 
 client.login(process.env.BOT_TOKEN);
