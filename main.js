@@ -3,7 +3,7 @@ const client = new Client();
 
 client.on("ready", () => { 
 
-            client.user.setPresence({ game: { name: "Coding Mode 3.6", type: 0 } })
+            client.user.setPresence({ game: { name: "Coding Mode 3.7", type: 0 } })
             client.user.setStatus("dnd")
 
 });
