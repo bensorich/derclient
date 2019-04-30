@@ -3,7 +3,7 @@ const client = new Client();
 
 client.on("ready", () => { 
 
-            client.user.setPresence({ game: { name: "Coding Mode 3.4", type: 0 } })
+            client.user.setPresence({ game: { name: "Coding Mode 3.5", type: 0 } })
             client.user.setStatus("dnd")
 
 });
@@ -71,7 +71,7 @@ client.on("message", message => {
         // ban
         member.ban().then((member) => {
             // Successmessage
-            message.channel.send(":wave: " + member.displayName + "wurde erfolgreich gebannt! https://gfycat.com/playfulfittingcaribou :point_right:");
+            message.channel.send(":wave: " + member.displayName + " wurde erfolgreich gebannt! https://gfycat.com/playfulfittingcaribou :point_right: ");
         }).catch(() => {
              // Failmessage
             message.channel.send("Access Denied");
