@@ -3,7 +3,7 @@ const client = new Client();
 
 client.on("ready", () => { 
 
-            client.user.setPresence({ game: { name: "Coding Mode 3.5", type: 0 } })
+            client.user.setPresence({ game: { name: "Coding Mode 3.6", type: 0 } })
             client.user.setStatus("dnd")
 
 });
@@ -91,6 +91,20 @@ client.on("message", (message) => {
             message.channel.send("Access Denied");
         });
     }
+});
+client.on('message', function(message) {
+    if (message.content == ".clear") {
+        try {
+            if (message.member.hasPermission("MANAGE_MESSAGES")) {
+                messages = message.channel.fetchMessages();
+                message.channel.bulkDelete(messages);
+            }
+        } catch(e) {
+            message.channel.send("ERROR: ERROR CLEARING CHANNEL.");
+            console.log(e);
+        }
+    }
+
 });
 })
 
