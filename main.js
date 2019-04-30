@@ -26,7 +26,6 @@ client.on("message", message => {
         const embed = new RichEmbed()
         .setColor(16776960)
         .setDescription("Die Team-Info von das CloudBot-Team kommt bald!")
-        .setAuthor("Test")
 
         message.channel.send({embed})
   }
