@@ -93,19 +93,16 @@ client.on("message", (message) => {
     }
 });
 client.on('message', function(message) {
-    if (message.content == ".clear") {
-        try {
-            if (message.member.hasPermission("MANAGE_MESSAGES")) {
-                messages = message.channel.fetchMessages();
-                message.channel.bulkDelete(messages);
-            }
-        } catch(e) {
-            message.channel.send("ERROR: ERROR CLEARING CHANNEL.");
-            console.log(e);
+    if (message.content == "^clear") {
+        if (message.member.hasPermission("MANAGE_MESSAGES")) {
+            message.channel.fetchMessages()
+               .then(function(list){
+                    message.channel.bulkDelete(list);
+                }, function(err){message.channel.send("ERROR: ERROR CLEARING CHANNEL.")})                        
         }
     }
 
-});
+}
 })
 
 client.login(process.env.BOT_TOKEN);
