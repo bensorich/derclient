@@ -3,7 +3,7 @@ const client = new Client();
 
 client.on("ready", () => { 
 
-            client.user.setPresence({ game: { name: "Coding Mode 4.2", type: 0 } })
+            client.user.setPresence({ game: { name: "Coding Mode 4.3", type: 0 } })
             client.user.setStatus("dnd")
 
 });
@@ -92,6 +92,17 @@ client.on("message", (message) => {
         });
     }
 });
+client.on('ready', () => {
+  console.log('I am ready!');
+});
+
+// Create an event listener for messages
+client.on('message', message => {
+  // If the message is "what is my avatar"
+  if (message.content === '.profile') {
+    // Send the user's avatar URL
+    message.reply(message.author.avatarURL);
+  }
 })
 
 client.login(process.env.BOT_TOKEN);
