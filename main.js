@@ -75,33 +75,6 @@ client.on('message', message => {
     } else {
       message.reply('You need to join a voice channel first!');
     }
-  }
-const Discord = require('discord.js')
-const client = new Discord.Client()
-
-client.login(process.eynv.TOKEN)
-  
-  
-  
-client.on ( 'message', message => {
-    warprefix = "."
-    
-    if(message.content.startsWith('${preifx}ping')) {
-messsage.channel.send('ponk')
-    }
-    if(message.content.startsWith('${prefix}dm')) {
-    
-      message.member.send('hello wordl!\nthis is a new line!')
-    }
-
-    if(message.content.startsWith('${prefix}say')) {
-      let args = message.content.slice(prefix.length).trim().split(/ +/g);
-      let text = args.join(" ");
-      if(!text) return message.replay('hey, say something *im giving up on u*')
-    message.channel.send(text)
-    }
-
-    })
 })
 
 client.login(process.env.BOT_TOKEN);
