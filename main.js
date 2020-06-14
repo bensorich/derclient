@@ -3,7 +3,7 @@ const client = new Client();
 
 client.on("ready", () => { 
 
-            client.user.setPresence({ game: { name: ".help | Beta V 0.3", type: 0 } })
+            client.user.setPresence({ game: { name: "e!help | Beta V 0.3", type: 0 } })
             client.user.setStatus("dnd")
 
 });
